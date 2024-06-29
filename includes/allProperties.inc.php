@@ -37,43 +37,48 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <html>
 <head>
-    
+<link rel = "stylesheet"  href="../pagesStyle.css" />
 </head>
 
 
 <body>
 
-<h3>Search Results: </h3>
+<h3>Property List: </h3>
 
     <?php
         if(empty($result)){
             echo "No Results";
             echo "<br>";
-        }else{
-            echo "<br>";
-           // var_dump($result); print all comments in array formate
-            foreach($result as $row){
-                //sanitize data using htmlspecialchars when outputing data
-                echo  htmlspecialchars($row["PropertyStreet"]);
-                echo htmlspecialchars("  " .$row["PropertyCity"]);
-                echo htmlspecialchars("  " .$row["PropertyState"]);
-                echo htmlspecialchars(" ".$row["PropertyZip"]);
-                echo htmlspecialchars(" ".$row["NumberOfBedrooms"]);
-                echo htmlspecialchars(" ".$row["NumberOfBathrooms"]);
-                echo htmlspecialchars(" ".$row["SquareFt"]);
-                echo htmlspecialchars(" ".$row["Vacancy"]);
-                
-                
-                
-                echo "<br>";
-            }
-
         }
 
-    ?>
-
-    
-
+            echo "<br>";
+            echo '<table>
+                <tr>
+                    <th>Street </th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Bedrooms</th>
+                    <th>Bathrooms </th>
+                    <th>Square Ft. </th>
+                    <th>Vacant? </th>
+                </tr>' ;
+          
+            foreach($result as $row):?>
+              <tr>
+        <td><?= htmlspecialchars($row['PropertyStreet']) ?></td>
+        <td><?= htmlspecialchars($row['PropertyCity']) ?></td>
+        <td><?= htmlspecialchars($row['PropertyState']) ?></td>
+        <td><?= htmlspecialchars($row['PropertyZip']) ?></td>
+        <td><?= htmlspecialchars($row['NumberOfBedrooms']) ?></td>
+        <td><?= htmlspecialchars($row['NumberOfBathrooms']) ?></td>
+        <td><?= htmlspecialchars($row['SquareFt']) ?></td>
+        <td><?= htmlspecialchars($row['Vacancy']) ?></td>
+         </tr>
+        
+         <?php endforeach ?>
+         <?php echo "</table>";?>
+        
 
 
 </body>

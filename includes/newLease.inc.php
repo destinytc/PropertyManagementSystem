@@ -15,8 +15,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         require_once "dbh-inc.php";
 
-        $query = "INSERT INTO Lease (LeaseStartDate, LeaseEndDate, MonthlyAmount) 
-        VALUES  (:LeaseStartDate, :LeaseEndDate, :MonthlyAmount, :TenantID, ;PropertyID);";
+        $query = "INSERT INTO Lease (LeaseStartDate, LeaseEndDate, MonthlyAmount, TenantID, PropertyID) 
+        VALUES  (:LeaseStartDate, :LeaseEndDate, :MonthlyAmount, :TenantID, :PropertyID);";
 
 
         $stmt = $pdo->prepare($query);

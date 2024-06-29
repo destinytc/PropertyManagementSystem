@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
     try{
         require_once "dbh-inc.php";
-        $query= "SELECT * FROM Employee;";
+        $query= "SELECT * FROM ServiceRequest;";
 
         $stmt = $pdo->prepare($query);
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <body>
 
-<h3>Employee List: </h3>
+<h3>Service List: </h3>
 
     <?php
         if(empty($result)){
@@ -52,21 +52,24 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             echo "<br>";
             echo '<table>
                 <tr>
-                    <th>First Name </th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Position</th>
+                    <th>Tenant </th>
+                    <th>Service Description</th>
+                    <th>Request Date</th>
+                    <th>Assigned Maintenance</th>
+                    <th>Service Date</th>
+                    <th>Service Time </th>
                     
                 </tr>' ;
           
             foreach($result as $row):?>
               <tr>
-        <td><?= htmlspecialchars($row['EmployeeFirstName']) ?></td>
-        <td><?= htmlspecialchars($row['EmployeeLastName']) ?></td>
-        <td><?= htmlspecialchars($row['EmployeeEmail']) ?></td>
-        <td><?= htmlspecialchars($row['EmployeePhoneNumber']) ?></td>
-        <td><?= htmlspecialchars($row['EmployeeType']) ?></td>
+        <td><?= htmlspecialchars($row['TenantID']) ?></td>
+        <td><?= htmlspecialchars($row['ServiceDescription']) ?></td>
+        <td><?= htmlspecialchars($row['RequestDate']) ?></td>
+        <td><?= htmlspecialchars($row['EmployeeID']) ?></td>
+        <td><?= htmlspecialchars($row['ServiceDate']) ?></td>
+        <td><?= htmlspecialchars($row['ServiceTime']) ?></td>
+    
     
          </tr>
         

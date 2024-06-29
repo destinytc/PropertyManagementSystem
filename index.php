@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel = "stylesheet" href="style.css" >
+    <link rel = "stylesheet"  href="style.css" />
 <title>Property Managment</title>
 </head>
 
@@ -14,8 +14,7 @@
         <li> <a href="index.php">Dashboard</a> </li>
         <li> <a href="./pages/properties.php">Properties </a></li>
         <li> <a href="./pages/tenants.php">Tenants </a></li>
-        <li> <a href="">Applications </a> </li>
-        <li> <a href="">Service Requests </a> </li>
+        <li> <a href="./pages/maintenance.php">Service Requests </a> </li>
         <li> <a href="./pages/employees.php">Employees </a> </li>
         <li> <a href="">Account </a> </li>
         <li> <a href="">Settings </a></li>
@@ -31,7 +30,7 @@
 
         <tr>
             <td><a href= "./pages/maintenance.php"> Maintenance </a></td>
-            <td> blank </td>
+            <td><a href= "./pages/employees.php"> Employees </a></td>
             <td> blank </td>
         </tr>    
 

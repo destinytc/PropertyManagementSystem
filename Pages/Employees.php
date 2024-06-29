@@ -8,13 +8,14 @@
 
 <h1> Employee Page </h1>
 
+<h3> Add an Employee </h3>
 
 <form action = "../includes/newEmployee.inc.php" method = "POST">
-<input type = "text" name = "employeeFirstName" placeholder="First Name">
-<input type = "text" name = "employeeLastName" placeholder="Last Name">
-<input type = "text" name = "employeePhoneNumber" placeholder="(xxx)-xxx-xxxx">
-<input type = "email" name = "employeeEmail" placeholder="@Email">
-<input type = "text" name = "employeeType" placehoder = "Employee position">
+<input type = "text" name = "employeeFirstName" placeholder="First Name" required>
+<input type = "text" name = "employeeLastName" placeholder="Last Name" required>
+<input type = "text" name = "employeePhoneNumber" placeholder="(xxx)-xxx-xxxx" required>
+<input type = "email" name = "employeeEmail" placeholder="@Email" required>
+<input type = "text" name = "employeeType" placehoder = "Employee position" required>
 
 <button> Add </button>
 </form>
